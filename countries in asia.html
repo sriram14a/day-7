@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    <script>
+    var API=new XMLHttpRequest;
+
+    API.open('GET','https://restcountries.com/v3.1/all',true);
+    API.send();
+    API.onload=function(){
+        let result=JSON.parse(this.response);
+        console.log("Countries in Asia continent","\n","\n");
+        result.filter((element)=> {
+            for (let key in element.continents)
+        if (element.continents[key]==="Asia"){
+        console.log(element.name.common);}
+    })}
+    
+    </script>
+</body>
+</html>
